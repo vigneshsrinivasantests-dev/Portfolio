@@ -1,8 +1,16 @@
 /* ============ SCENE — stacked full-screen frames ============
-   Holds are siblings inside <main>, which is their sticky containing block.
-   Nothing between <main> and a hold may set overflow, transform, filter or
-   perspective — any of those would create a new containing block and the
-   stack would collapse back to ordinary scrolling. */
+   Each scene's hold+runway pair shares a plain `.wrap` parent — a normal,
+   unpositioned block box. That box is what bounds the hold's sticky range to
+   its own runway (the standard sticky-within-a-bounding-parent pattern), so
+   a `keepFrame` hold un-sticks once its own runway has scrolled past instead
+   of staying pinned for the rest of <main>. `.wrap` must stay a plain block:
+   giving it overflow, transform, filter or perspective would create an
+   unrelated new containing block and break the cross-scene cover effect
+   described in Scene.tsx. */
+
+.wrap {
+  display: block;
+}
 
 .hold {
   position: sticky;

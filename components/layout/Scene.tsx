@@ -5,19 +5,26 @@
  *
  * ── The architecture, and why it is shaped this way ────────────────────
  *
- * A Scene renders TWO SIBLINGS directly into <main>:
+ * A Scene renders a `.wrap` containing two children:
  *
  *   <div class="hold">   position: sticky; top: 0; height: 100svh; z-index: n
  *   <div class="runway"> pure scroll distance, for scroll-driven interiors
  *
- * They are siblings — deliberately NOT nested in a per-scene wrapper. A
- * sticky element is released when its CONTAINING BLOCK runs out. If each
- * hold sat inside its own wrapper, it would unstick at the exact instant the
- * next scene's top entered the viewport, so the two could never overlap and
- * you would be back to ordinary scrolling. With <main> as the shared
- * containing block, a hold STAYS stuck at the top of the viewport while the
- * next hold — a later sibling with a higher z-index and an opaque background
- * — rises up from the bottom and covers it.
+ * `.wrap` is a plain, unpositioned block — it exists only to give each
+ * scene's own hold+runway pair a shared containing block, so the hold
+ * un-sticks once ITS OWN runway has scrolled past (the standard
+ * "sticky-within-a-bounding-parent" pattern). Without that shared parent, a
+ * sticky hold's stuck range is bounded only by <main> itself: harmless on
+ * desktop, where every later scene is ALSO sticky and visually covers the
+ * ones behind it — but on mobile, where most scenes release to normal flow
+ * (see the `keepOnMobile` note below), a `keepOnMobile` hold would never get
+ * covered again and would stay pinned over every section after it.
+ *
+ * Within one `.wrap`, hold and runway stay siblings (not nested one inside
+ * the other): a sticky element is released the instant its own containing
+ * block runs out, so the hold correctly stays pinned across its full runway
+ * and lets the NEXT scene's hold — a later sibling with a higher z-index and
+ * an opaque background — rise up from the bottom and cover it.
  *
  * That is the whole effect: the outgoing frame does not move, the incoming
  * frame slides up over it. It is native sticky driven by native scroll, so
@@ -56,7 +63,7 @@ export default function Scene({
   keepOnMobile?: boolean;
 }) {
   return (
-    <>
+    <div className={styles.wrap}>
       <div
         className={`${styles.hold} ${keepOnMobile ? styles.keepFrame : ""}`}
         data-scene={id ?? String(order)}
@@ -72,6 +79,6 @@ export default function Scene({
           aria-hidden="true"
         />
       )}
-    </>
+    </div>
   );
 }
