@@ -10,7 +10,6 @@
 
 import Link from "next/link";
 import { PROJECTS } from "@/content/projects";
-import LanguageToggle from "@/components/layout/LanguageToggle";
 import { useLang, L } from "@/lib/i18n";
 import styles from "./case.module.css";
 
@@ -20,9 +19,8 @@ export default function CaseView({ slug }: { slug: string }) {
   const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) return null; /* the server component already called notFound() */
 
-  const fr = lang === "fr" ? project.fr : undefined;
-  const study = { ...project.study, ...(fr?.study ?? {}) };
-  const tags = fr?.tags ?? project.tags;
+  const study = project.study;
+  const tags = project.tags;
 
   const idx = PROJECTS.indexOf(project);
   const next = PROJECTS[(idx + 1) % PROJECTS.length];
@@ -33,13 +31,10 @@ export default function CaseView({ slug }: { slug: string }) {
         <Link href="/#work" className={styles.back}>
           {t("case.back")}
         </Link>
-        {/* the toggle is repeated here because Nav only exists on the home
-            page — a shared case-study link is often a visitor's first screen */}
         <div className={styles.barRight}>
           <Link href="/" className={styles.logo}>
-            GIREESH<i>.</i>
+            VIGNESH<i>.</i>
           </Link>
-          <LanguageToggle />
         </div>
       </div>
 
@@ -105,25 +100,7 @@ export default function CaseView({ slug }: { slug: string }) {
                 color: project.cover.ink === "light" ? "#fff" : "var(--ink)",
               }}
             >
-              {project.cover.src && project.cover.variant === "photo" ? (
-                <img
-                  className={styles.coverPhoto}
-                  src={project.cover.src}
-                  alt={project.coverLabel}
-                  style={
-                    project.cover.focus ? { objectPosition: project.cover.focus } : undefined
-                  }
-                />
-              ) : project.cover.src ? (
-                <img
-                  className={styles.coverBrand}
-                  src={project.cover.src}
-                  alt={project.coverLabel}
-                  style={{ aspectRatio: project.cover.aspect ?? 1 }}
-                />
-              ) : (
-                <span className={styles.coverMark}>{project.cover.mark}</span>
-              )}
+              <span className={styles.coverMark}>{project.cover.mark}</span>
             </div>
           ) : (
             <div className={styles.cover}>

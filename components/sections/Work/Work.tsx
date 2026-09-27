@@ -129,25 +129,7 @@ export default function Work() {
                       : undefined
                   }
                 >
-                  {p.cover?.src && p.cover.variant === "photo" ? (
-                    /* his own capture of the built site — full-bleed */
-                    <img
-                      className={styles.coverPhoto}
-                      src={p.cover.src}
-                      alt={p.coverLabel}
-                      style={p.cover.focus ? { objectPosition: p.cover.focus } : undefined}
-                      loading="lazy"
-                    />
-                  ) : p.cover?.src ? (
-                    /* verified brand mark, sized by its true aspect ratio */
-                    <img
-                      className={styles.coverBrand}
-                      src={p.cover.src}
-                      alt={p.coverLabel}
-                      style={{ aspectRatio: p.cover.aspect ?? 1 }}
-                      loading="lazy"
-                    />
-                  ) : p.cover?.mark ? (
+                  {p.cover?.mark ? (
                     <span className={styles.coverMark} aria-label={p.coverLabel}>
                       {p.cover.mark}
                     </span>
@@ -160,9 +142,7 @@ export default function Work() {
                   <h3>{L(lang, p, "title")}</h3>
                   <p className={styles.contribution}>{L(lang, p, "contribution")}</p>
                   <p className={styles.tags}>
-                    {(p.fr && lang === "fr" ? p.fr.tags ?? p.tags : p.tags)
-                      .join(" · ")
-                      .toUpperCase()}
+                    {p.tags.join(" · ").toUpperCase()}
                   </p>
                   <div className={styles.metaFoot}>
                     <span className={styles.year}>{p.year}</span>

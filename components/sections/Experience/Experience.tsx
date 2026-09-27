@@ -211,7 +211,7 @@ export default function Experience() {
           {ROLES.map((r, i) => (
             <article
               className={`${styles.board} ${r.fg === "dark" ? styles.dark : ""} ${i === 0 ? styles.on : ""}`}
-              key={r.company}
+              key={`${r.company}-${i}`}
               style={{ background: r.color, zIndex: 200 - i }}
             >
               {/* IDENTITY STRIP — sits inside the exposed top band of every
@@ -239,10 +239,7 @@ export default function Experience() {
                       <p className={styles.lbl}>{t("exp.worked")}</p>
                       <p className={styles.summary}>{L(lang, r, "summary")}</p>
                       <ul className={styles.list}>
-                        {(lang === "fr" && r.fr?.achievements
-                          ? r.fr.achievements
-                          : r.achievements
-                        ).map((a) => (
+                        {r.achievements.map((a) => (
                           <li key={a}>{a}</li>
                         ))}
                       </ul>
@@ -294,8 +291,8 @@ export default function Experience() {
       <div className={styles.foot}>
         <span className={styles.count}>01 / 0{ROLES.length}</span>
         <div className={styles.nav} role="list">
-          {ROLES.map((r) => (
-            <button className={styles.navItem} key={r.company} type="button">
+          {ROLES.map((r, i) => (
+            <button className={styles.navItem} key={`${r.company}-${i}`} type="button">
               <i style={{ background: r.color }} />
               {r.company}
             </button>

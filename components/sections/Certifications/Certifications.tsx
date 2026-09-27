@@ -261,7 +261,7 @@ export default function Certifications() {
                     <div className={styles.metric}>
                       <span className={styles.metricValue}>{c.metric.value}</span>
                       <span className={styles.metricLabel}>
-                        {(lang === "fr" && c.fr?.metricLabel) || c.metric.label}
+                        {c.metric.label}
                       </span>
                     </div>
                   )}
@@ -287,10 +287,8 @@ export default function Certifications() {
                     <ul className={styles.skills}>
                       {/* English list stays the key source, so switching
                           language re-labels rows instead of remounting them */}
-                      {c.skills.map((s, si) => (
-                        <li key={s}>
-                          {(lang === "fr" && c.fr?.skills?.[si]) || s}
-                        </li>
+                      {c.skills.map((s) => (
+                        <li key={s}>{s}</li>
                       ))}
                     </ul>
 
