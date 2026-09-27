@@ -60,7 +60,7 @@ export const DICT: Record<string, string> = {
   "journey.enter": "Scroll to travel",
   "journey.chapter": "Chapter",
   "journey.lede":
-    "From Chennai to leading QA on a US healthcare product — the chapters that turned a process analyst into a QA lead.",
+    "From Chennai to leading QA in Nagercoil on a US healthcare product — the chapters that turned a process analyst into a QA lead.",
 
   /* ---------------- QA stack ---------------- */
   "stack.eyebrow": "Toolkit",

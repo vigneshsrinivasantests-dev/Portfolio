@@ -51,7 +51,7 @@ export const CHAPTERS: Chapter[] = [
   {
     id: "qa-lead",
     year: "2024",
-    title: "Leading regression and API testing",
+    title: "Leading QA Team",
     place: "Inypay · Chennai",
     story:
       "As QA Lead — Engineering, ownership widened: end-to-end regression across Android and iOS, API testing with Postman, automated test cases in Node.js tracked in TestRail, and performance testing with JMeter.",

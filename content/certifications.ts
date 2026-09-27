@@ -1,14 +1,10 @@
 /* Credentials — professional certification records.
  *
  * ⚠ SOURCING NOTE — read before editing.
- * Both entries come directly from Vignesh's résumé. The issuing body was not
- * named on the résumé, so ISSUER, YEAR and CREDENTIAL ID are left null and
- * render as "to confirm" rather than being guessed — printing an invented
- * issuer or credential ID on a job-seeker's portfolio is a false credential
- * claim, not a design detail.
- *
- * To complete a panel, fill in: issuer, year, credentialId, credentialUrl.
- * `verified` should only become true when a credential URL exists. */
+ * Issuer and year confirmed from Vignesh's LinkedIn "Licenses &
+ * certifications" list. CREDENTIAL ID is still not available, so it stays
+ * null and renders as "to confirm" rather than being guessed. `verified`
+ * stays false until a credential URL/ID is supplied. */
 
 export type Cert = {
   no: string; /* deck-style section number */
@@ -30,9 +26,9 @@ export type Cert = {
 export const CERTS: Cert[] = [
   {
     no: "1.1",
-    issuer: null,
+    issuer: "VMEdu.com",
     title: "Scrum Fundamentals Certified",
-    year: null,
+    year: "Mar 2022",
     credentialId: null,
     verified: false,
     skills: [
@@ -44,9 +40,9 @@ export const CERTS: Cert[] = [
   },
   {
     no: "1.2",
-    issuer: null,
+    issuer: "Certiprof",
     title: "Scrum Foundation Professional Certificate",
-    year: null,
+    year: "Jul 2022",
     credentialId: null,
     verified: false,
     skills: [

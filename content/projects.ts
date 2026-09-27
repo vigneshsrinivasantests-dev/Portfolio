@@ -93,7 +93,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "fintech-qa-lead",
-    title: "Regression & API Testing Lead — Inypay",
+    title: "QA Lead — Engineering — Inypay",
     tags: ["Regression Testing", "API Testing", "Mobile QA"],
     year: "2024",
     oneLiner:
@@ -101,7 +101,7 @@ export const PROJECTS: Project[] = [
     contribution:
       "Owned regression, API and performance testing workflows across two mobile platforms.",
     coverLabel: "FINTECH QA LEAD",
-    cover: { bg: "#0072E3", ink: "light", mark: "API" },
+    cover: { bg: "#0072E3", ink: "light", mark: "QA" },
     study: {
       role: "QA Lead — Engineering",
       timeline: "Feb – Jul 2024 · Inypay, Chennai",
