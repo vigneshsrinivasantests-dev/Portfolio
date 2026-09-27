@@ -243,6 +243,7 @@
   max-width: 92%;
   object-fit: contain;
   object-position: bottom;
+  border-radius: 22px;
   filter: drop-shadow(0 36px 58px rgba(20, 20, 20, 0.17));
   will-change: transform;
 }

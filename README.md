@@ -1,14 +1,11 @@
-# Gireesh — Portfolio
+# Vignesh — Portfolio
 
-Personal portfolio of **Gireesh Kumar Reddy Kolli**, Product Designer & UX
-Consultant (Antibes, France). A single-page cinematic experience: full-screen
-scenes stacked on top of each other, each one rising over the last as you
-scroll, with scroll-driven set pieces inside them.
+Personal portfolio of **Vignesh Srinivasan**, QA Lead Engineer (Nagercoil,
+Tamil Nadu, India). A single-page cinematic experience: full-screen scenes
+stacked on top of each other, each one rising over the last as you scroll,
+with scroll-driven set pieces inside them.
 
-**Live product work:** [myheeding.com](https://www.myheeding.com/en) ·
-**Profiles:** [LinkedIn](https://www.linkedin.com/in/gireesh-kumar-reddy-kolli-) ·
-[GitHub](https://github.com/gireeshkumarreddy) ·
-[Instagram](https://www.instagram.com/itsgireeshreddy)
+**Profile:** [LinkedIn](https://www.linkedin.com/in/vignesh-srinivasan-61203116b)
 
 ## Stack
 
@@ -20,20 +17,19 @@ scroll, with scroll-driven set pieces inside them.
 | 3D | Three.js (intro tunnel, journey light cables) |
 | Styling | CSS Modules + design tokens in `app/globals.css` |
 | Content | Typed local files in `content/` |
-| i18n | EN/FR React context (`lib/i18n.tsx`) — pure state, survives scroll |
 
 ## The scenes
 
-1. **Intro** — Three.js gallery tunnel travelled through the "GIREESH" mask
+1. **Intro** — Three.js gallery tunnel travelled through the "VIGNESH" mask
 2. **Hero** — headline, stats, CTAs
 3. **About** — identity, philosophy, velocity marquee
-4. **Journey** — six resume chapters (2021–2026) inside a light-cable tunnel
-5. **Design Stack** — tool spiral
-6. **Work** — 14 selected projects on a perspective card arc, each with a
+4. **Journey** — five résumé chapters (2020–present) inside a light-cable tunnel
+5. **QA Stack** — tool spiral
+6. **Work** — QA case studies on a perspective card arc, each with a
    case-study route at `/work/[slug]`
-7. **Experience** — seven roles as a stacked panel deck
-8. **Credentials** — certification records with issuer marks, right-to-centre deck
-9. **Gallery** — *The People Behind the Work*: 14 photographs on a drifting wall
+7. **Experience** — four roles as a stacked panel deck
+8. **Credentials** — certification records, right-to-centre deck
+9. **Gallery** — personal photographs on a drifting wall
 10. **Connect** — contact, socials, footer
 
 ## Scroll architecture
@@ -51,7 +47,7 @@ every transition is scrubbable and reverses exactly.
 app/            layout, the scene stack (page.tsx), /work/[slug] case studies,
                 sitemap, robots, 404, /tunnel lab route
 components/
-  layout/       Nav, Scene, LanguageToggle, SmoothScroll
+  layout/       Nav, Scene, SmoothScroll
   sections/     one folder per scene (component + module.css)
   ui/           Button (the site-wide CTA standard), VelocityMarquee
 content/        typed content: projects, journey, experience, certifications,

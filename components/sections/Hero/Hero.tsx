@@ -8,12 +8,12 @@ import styles from "./Hero.module.css";
 import { useLang } from "@/lib/i18n";
 
 const STATS_LEFT = [
-  { n: 20, suffix: "+", key: "stat.projects", icon: "/images/icons/projects.png" },
-  { n: 5, suffix: "+", key: "stat.years", icon: "/images/icons/years.png" },
+  { n: 4, suffix: "+", key: "stat.years", icon: "/images/icons/years.png" },
+  { n: 2, suffix: "", key: "stat.domains", icon: "/images/icons/projects.png" },
 ];
 const STATS_RIGHT = [
-  { n: 10, suffix: "+", key: "stat.countries", icon: "/images/icons/countries.png" },
-  { n: 100, suffix: "%", key: "stat.satisfaction", icon: "/images/icons/satisfaction.png" },
+  { n: 4, suffix: "", key: "stat.companies", icon: "/images/icons/countries.png" },
+  { n: 10, suffix: "+", key: "stat.tools", icon: "/images/icons/satisfaction.png" },
 ];
 
 /* ambient particles — position (vw/vh %), size px, tone */
@@ -221,10 +221,10 @@ export default function Hero() {
 
           <Image
             className={styles.portrait}
-            src="/images/portrait.png"
-            alt="Gireesh Kumar Reddy — Product Designer"
-            width={554}
-            height={573}
+            src="/images/portrait.jpg"
+            alt="Vignesh Srinivasan — QA Lead Engineer"
+            width={720}
+            height={960}
             priority
             data-depth="0.03"
           />

@@ -10,27 +10,27 @@ import { useLang } from "@/lib/i18n";
 const MARQUEE_ROWS = [
   {
     items: [
-      "Product Design",
-      "UX Design",
-      "UI Design",
-      "Design Systems",
-      "User Research",
-      "Interaction Design",
-      "Design Thinking",
+      "Manual Testing",
+      "Automation Testing",
+      "Regression Testing",
+      "API Testing",
+      "Performance Testing",
+      "QA Leadership",
+      "Mentoring",
     ],
     velocity: 34,
   },
   {
     items: [
-      "Wireframing",
-      "Prototyping",
-      "Visual Design",
-      "Accessibility",
-      "Motion Design",
-      "Figma",
-      "Framer",
-      "AI-Assisted Design",
-      "Frontend Development",
+      "Selenium",
+      "Playwright",
+      "Appium",
+      "Postman/Newman",
+      "JMeter",
+      "TestRail",
+      "Agile/Scrum",
+      "AI-Augmented QA",
+      "Defect Tracking",
     ],
     velocity: -28,
     outline: true,
@@ -38,10 +38,10 @@ const MARQUEE_ROWS = [
 ];
 
 const METRICS = [
-  { value: "1st", count: null, key: "about.m1" },
-  { value: "3+", count: 3, suffix: "+", key: "about.m2" },
-  { value: "$70K+", count: 70, prefix: "$", suffix: "K+", key: "about.m3" },
-  { value: "1B+", count: null, key: "about.m4" },
+  { value: "4+", count: 4, suffix: "+", key: "about.m1" },
+  { value: "2", count: 2, key: "about.m2" },
+  { value: "4", count: 4, key: "about.m3" },
+  { value: "AI-QA", count: null, key: "about.m4" },
 ];
 
 export default function About() {

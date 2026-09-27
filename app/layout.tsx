@@ -24,26 +24,26 @@ const caveat = Caveat({
 });
 
 const DESCRIPTION =
-  "Product Designer crafting UX for climate-tech and AI products — where design, data, and business strategy meet. Based in Antibes, France.";
+  "QA Lead Engineer leading manual and automation testing across Fintech and US Healthcare — Selenium, Playwright, Appium, Postman/Newman, JMeter and TestRail, with AI-augmented QA workflows. Based in Nagercoil, Tamil Nadu, India.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Gireesh Kumar Reddy — Product Designer",
+    default: "Vignesh Srinivasan — QA Lead Engineer",
     template: "%s",
   },
   description: DESCRIPTION,
   openGraph: {
-    title: "Gireesh Kumar Reddy — Product Designer",
+    title: "Vignesh Srinivasan — QA Lead Engineer",
     description: DESCRIPTION,
     url: SITE_URL,
-    siteName: "Gireesh — Portfolio",
+    siteName: "Vignesh — Portfolio",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gireesh Kumar Reddy — Product Designer",
+    title: "Vignesh Srinivasan — QA Lead Engineer",
     description: DESCRIPTION,
   },
 };
@@ -54,7 +54,8 @@ const personJsonLd = {
   name: PERSON.name,
   jobTitle: PERSON.jobTitle,
   email: `mailto:${PERSON.email}`,
-  address: { "@type": "PostalAddress", addressLocality: "Antibes", addressCountry: "FR" },
+  telephone: PERSON.phone,
+  address: { "@type": "PostalAddress", addressLocality: "Nagercoil", addressRegion: "Tamil Nadu", postalCode: "629001", addressCountry: "IN" },
   url: SITE_URL,
   sameAs: PERSON.sameAs,
 };

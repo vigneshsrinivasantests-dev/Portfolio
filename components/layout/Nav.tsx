@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import LanguageToggle from "./LanguageToggle";
 import { useLang } from "@/lib/i18n";
 import styles from "./Nav.module.css";
 
@@ -96,7 +95,7 @@ export default function Nav() {
     <header className={styles.wrap} ref={ref}>
       <div className={styles.cap}>
         <a href="#home" className={styles.logo} aria-label={t("nav.home")}>
-          GIREESH<i>.</i>
+          VIGNESH<i>.</i>
         </a>
 
         <nav className={styles.links} aria-label="Primary">
@@ -119,7 +118,6 @@ export default function Nav() {
         </nav>
 
         <div className={styles.right}>
-          <LanguageToggle />
           <button
             type="button"
             className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
